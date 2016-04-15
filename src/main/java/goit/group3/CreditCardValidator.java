@@ -10,6 +10,16 @@ public class CreditCardValidator implements Validator {
         return false;
     }
 
+    @Override
+    public void printMessage(boolean valid) {
+        if (valid){
+            System.out.print("Valid!\r");
+        }
+        else{
+            System.out.print("Invalid!");
+        }
+    }
+
     private boolean isOnlyNumeric(String str) {
         if (str == null)
             return false;
