@@ -7,6 +7,7 @@ public class CreditCardValidator implements Validator<CreditCard> {
 //        cardNumber = card.getCardNumber().replaceAll("\\s","");
 //        card.setCardNumber(cardNumber);
 //
+
 //        if (!isOnlyNumeric(cardNumber))
 //            throw new WrongNumberException(cardNumber);
 //
