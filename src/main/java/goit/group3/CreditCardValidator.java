@@ -4,9 +4,13 @@ public class CreditCardValidator implements Validator<CreditCard> {
 
     @Override
     public boolean validation(CreditCard card) {
-        /*
-         realization
-         */
+//        cardNumber = card.getCardNumber().replaceAll("\\s","");
+//        card.setCardNumber(cardNumber);
+//
+//        if (!isOnlyNumeric(cardNumber))
+//            throw new WrongNumberException(cardNumber);
+//
+//        return LuhnAlgorithm.checkNumber(card.getCardNumber());
         return false;
     }
 
