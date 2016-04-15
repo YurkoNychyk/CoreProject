@@ -1,9 +1,9 @@
 package main.java.goit.group3;
 
-public class CreditCardValidator implements Validator {
-    @Override
-    public boolean validation(Object obj) {
+public class CreditCardValidator implements Validator<CreditCard> {
 
+    @Override
+    public boolean validation(CreditCard obj) {
         /*
          realization
          */
