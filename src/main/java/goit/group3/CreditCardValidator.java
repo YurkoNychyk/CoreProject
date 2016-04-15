@@ -3,7 +3,7 @@ package main.java.goit.group3;
 public class CreditCardValidator implements Validator<CreditCard> {
 
     @Override
-    public boolean validation(CreditCard obj) {
+    public boolean validation(CreditCard card) {
         /*
          realization
          */
