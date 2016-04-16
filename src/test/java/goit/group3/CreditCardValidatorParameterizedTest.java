@@ -1,5 +1,8 @@
-package main.java.goit.group3;
+package java.goit.group3;
 
+import main.java.goit.group3.CreditCard;
+import main.java.goit.group3.CreditCardValidator;
+import main.java.goit.group3.WrongNumberException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
