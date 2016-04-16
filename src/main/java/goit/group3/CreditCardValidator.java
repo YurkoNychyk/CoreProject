@@ -3,14 +3,17 @@ package main.java.goit.group3;
 public class CreditCardValidator implements Validator<CreditCard> {
 
     @Override
-    public boolean validation(CreditCard card) {
+    public boolean validation(CreditCard card) throws WrongNumberException {
         String cardNumber = card.getNumber().replaceAll("\\s", "");
         card.setNumber(cardNumber);
+        try {
+            if (!isOnlyNumeric(cardNumber))
+                //throw new WrongNumberException(cardNumber);
+                throw new WrongNumberException();
 
-        if (!isOnlyNumeric(cardNumber))
-            //throw new WrongNumberException(cardNumber);
-            throw new WrongNumberException(); // Yura, correct this, please
+        }catch (WrongNumberException e){
 
+        }
         return LuhnAlgorithm.luhnAlgorithm(card.getNumber());
     }
 
