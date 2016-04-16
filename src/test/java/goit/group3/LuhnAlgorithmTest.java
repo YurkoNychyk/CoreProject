@@ -1,4 +1,4 @@
-package java.goit.group3;
+package test.java.goit.group3;
 
 import org.junit.Test;
 
