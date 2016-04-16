@@ -2,9 +2,7 @@ package main.java.goit.group3;
 
 public class LuhnAlgorithm {
 
-    static boolean luhnAlgorithm(String number){
-
-
+    public static boolean luhnAlgorithm(String number){
         int sum = 0;
         for (int i = 0; i < number.length(); i++){
             char tmp = number.charAt(i);

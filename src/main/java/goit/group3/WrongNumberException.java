@@ -1,6 +1,6 @@
 package main.java.goit.group3;
 
-public class WrongNumberException {
+public class WrongNumberException extends IllegalArgumentException {
 
     public static boolean WrongNumberException(String number) {
 
