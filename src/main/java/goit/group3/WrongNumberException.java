@@ -9,4 +9,12 @@ public class WrongNumberException extends IllegalArgumentException {
     public WrongNumberException() {
         super("Number should contain 16 digits.");
     }
+
+//    private boolean isOnlyPositive(int[] ints) {
+//
+//        for (int i = 0; i < ints.length; i++)
+//            if (i < 0)
+//                return false;
+//        return true;
+//    }
 }
