@@ -6,14 +6,10 @@ public class CreditCardValidator implements Validator<CreditCard> {
     public boolean validation(CreditCard card) throws WrongNumberException {
         String cardNumber = card.getNumber().replaceAll("\\s", "");
         card.setNumber(cardNumber);
-        try {
-            if (!isOnlyNumeric(cardNumber))
-                //throw new WrongNumberException(cardNumber);
-                throw new WrongNumberException();
 
-        }catch (WrongNumberException e){
+        if (!isOnlyNumeric(cardNumber))
+           throw new WrongNumberException(cardNumber);
 
-        }
         return LuhnAlgorithm.luhnAlgorithm(card.getNumber());
     }
 
