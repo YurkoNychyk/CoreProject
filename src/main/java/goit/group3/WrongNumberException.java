@@ -7,7 +7,7 @@ public class WrongNumberException extends IllegalArgumentException {
          {
             int extraChars = number.length() - 16;
             if (extraChars != 0) {
-                throw new IllegalArgumentException("Number length should be 16 characters!");
+                throw new IllegalArgumentException("Number length should be 16 characters!!");
             }
             return true;
         }
