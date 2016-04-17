@@ -51,8 +51,8 @@ public class LuhnAlgorithm {
     }
 
     //for int data
-    public static boolean validateNumber(int number) throws NumberFormatException {
-        int[]digits = Integer.toString(number).chars().map(c -> c-='0').toArray();
+    public static boolean validateNumber(Long number) throws NumberFormatException {
+        int[]digits = Long.toString(number).chars().map(c -> c-='0').toArray();
         return validateNumber(digits);
     }
 
