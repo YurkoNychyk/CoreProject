@@ -6,7 +6,14 @@ public class WrongNumberException extends IllegalArgumentException {
         super(massege);
     }
 
-//    private boolean isOnlyPositive(int[] ints) {
+    public WrongNumberException(int[] ints) {
+        super("Number should be >0");
+        for (int i = 0; i < ints.length; i++)
+            if (i < 0);
+
+    }
+
+//    private boolean isOnlyPositive() {
 //
 //        for (int i = 0; i < ints.length; i++)
 //            if (i < 0)

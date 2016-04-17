@@ -3,11 +3,11 @@ package main.java.goit.group3;
 public class Runner {
     public static void main(String[] args) {
 
-        String test = "123g4";
+        String test = "123b4";
         int [] test2 = {-1,2,3,5,4};
         boolean check;
         try {
-            check = LuhnAlgorithm.validateNumber(test2);
+            check = LuhnAlgorithm.validateNumber(test);
             if (check) {
                 System.out.println("true");
             } else System.out.println("false");
