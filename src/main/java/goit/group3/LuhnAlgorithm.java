@@ -3,10 +3,10 @@ package main.java.goit.group3;
 public class LuhnAlgorithm {
 
     // for int[] data
-    public static boolean validateNumber(int[] ints) throws IllegalArgumentException {
+    public static boolean validateNumber(int[] ints) throws NumberFormatException {
 
         if (!isOnlyPositive(ints)) {
-            throw new IllegalArgumentException("Digits, be positive! :)");
+            throw new NumberFormatException("Digits, be positive! :)");
         }
 
         for (int i = ints.length - 2; i >= 0; i = i - 2) {
@@ -25,9 +25,14 @@ public class LuhnAlgorithm {
     }
 
     //for String data
-    public static boolean validateNumber(String number) throws IllegalArgumentException {
+    public static boolean validateNumber(String number) throws NumberFormatException {
+        int temp;
+        try {
+            temp = Integer.parseInt(number);
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("Only numeric symbols .");
+        }
 
-        int temp = Integer.parseInt(number);
         int[]digits = Integer.toString(temp).chars().map(c -> c-='0').toArray();
         return validateNumber(digits);
 //        String reverse = new StringBuilder().append(number).reverse().toString();
@@ -46,25 +51,16 @@ public class LuhnAlgorithm {
     }
 
     //for int data
-    public static boolean validateNumber(int number) throws IllegalArgumentException {
+    public static boolean validateNumber(int number) throws NumberFormatException {
         int[]digits = Integer.toString(number).chars().map(c -> c-='0').toArray();
         return validateNumber(digits);
     }
 
     private static boolean isOnlyPositive(int[] ints) {
-        for (int i = 0; i < ints.length; i++)
-            if (i < 0)
+        for (int i = 0; i < ints.length-1; i++)
+            if (ints[i] < 0)
                 return false;
         return true;
     }
-
-//    private static boolean isOnlyPositive(int number) {
-//        int[]digits = Integer.toString(number).chars().map(c -> c-='0').toArray();
-//        for(int d : digits) {
-//            if (d<0) return false;
-//        }
-//        return true;
-//    }
-
 }
 
