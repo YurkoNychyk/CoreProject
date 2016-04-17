@@ -28,8 +28,7 @@ public class LuhnAlgorithmTestString {
                 {"4417123456789113", true},
                 {"400000012", false},
                 {"4413130856858590", true}
-
-                }
+            }
         );
     }
     @Test

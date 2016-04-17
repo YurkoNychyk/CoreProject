@@ -11,7 +11,7 @@ function validate(val) {
 	var number= val.split(' ').join('');
 	for (var i = 0; i < number.length; i++) {
 		if (number.charAt(i) < '0' || number.charAt(i) > '9') {
-			document.getElementById('warningText').innerHTML = 'Card number should contains only numeric symbols!';
+			document.getElementById('warningText').innerHTML = 'Card number should contain only numeric symbols!';
 			return;
 		}
 	}
