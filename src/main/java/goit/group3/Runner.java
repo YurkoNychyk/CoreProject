@@ -13,8 +13,7 @@ public class Runner {
                 System.out.println("true");
             } else System.out.println("false");
         } catch (Exception e) {
-            //System.err.println(e.getMessage());
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
     }
 }

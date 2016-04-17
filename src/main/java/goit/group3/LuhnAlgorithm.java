@@ -1,7 +1,5 @@
 package main.java.goit.group3;
 
-import java.util.Arrays;
-
 public class LuhnAlgorithm {
 
     // for int[] data
