@@ -2,22 +2,29 @@ package main.java.goit.group3;
 
 public class LuhnAlgorithm {
 
-    public static boolean luhnAlgorithm(String number){
-        int sum = 0;
-        for (int i = 0; i < number.length(); i++){
-            char tmp = number.charAt(i);
-            int num = tmp - '0';
-            int product;
-            if (i % 2 != 0){
-                product = num * 1;
+
+    public static boolean luhnAlgorithm(String str) throws IllegalArgumentException {
+
+
+            int[] ints = new int[str.length()];
+            for (int i = 0; i < str.length(); i++) {
+                ints[i] = Integer.parseInt(str.substring(i, i + 1));
+
             }
-            else{
-                product = num * 2;
+
+            for (int i = ints.length - 2; i >= 0; i = i - 2) {
+                int j = ints[i];
+                j = j * 2;
+                if (j > 9) {
+                    j = j % 10 + 1;
+                }
+                ints[i] = j;
             }
-            if (product > 9)
-                product -= 9;
-            sum+= product;
-        }
-        return (sum % 10 == 0);
+            int sum = 0;
+            for (int i = 0; i < ints.length; i++) {
+                sum += ints[i];
+            }
+            return sum % 10 == 0;
     }
 }
+
