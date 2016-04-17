@@ -5,7 +5,7 @@ import org.junit.Test;
 public class LuhnAlgorithmTest {
 
     @Test
-    public void testLuhnAlgorithm() throws Exception {
+    public void validateNumber() throws Exception {
 
     }
 }
