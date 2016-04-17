@@ -26,7 +26,7 @@ public class LuhnAlgorithmTestString {
                 {"1234567891012132", false},
                 {"676280388885503265", true},
                 {"4417123456789113", true},
-                {"40000001234567899", false},
+                {"400000012", false},
                 {"4413130856858590", true}
 
                 }
@@ -34,7 +34,8 @@ public class LuhnAlgorithmTestString {
     }
     @Test
     public void testValidateNumber() throws Exception {
-    boolean result =LuhnAlgorithm.validateNumber(number);
+        System.out.println(number);
+        boolean result =LuhnAlgorithm.validateNumber(number);
         Assert.assertEquals(expectedCheck, result);
     }
 }

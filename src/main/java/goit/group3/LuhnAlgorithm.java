@@ -26,14 +26,14 @@ public class LuhnAlgorithm {
 
     //for String data
     public static boolean validateNumber(String number) throws NumberFormatException {
-        int temp;
+        long temp;
         try {
-            temp = Integer.parseInt(number);
+            temp = Long.parseLong(number);
         } catch (NumberFormatException e) {
             throw new NumberFormatException("Only numeric symbols should be here.");
         }
 
-        int[]digits = Integer.toString(temp).chars().map(c -> c-='0').toArray();
+        int[]digits = Long.toString(temp).chars().map(c -> c-='0').toArray();
         return validateNumber(digits);
 //        String reverse = new StringBuilder().append(number).reverse().toString();
 //        int sum = 0;
