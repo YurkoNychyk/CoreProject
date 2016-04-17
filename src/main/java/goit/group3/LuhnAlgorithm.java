@@ -1,5 +1,7 @@
 package main.java.goit.group3;
 
+import java.util.Arrays;
+
 public class LuhnAlgorithm {
 
     // for int[] data
@@ -9,19 +11,32 @@ public class LuhnAlgorithm {
             throw new NumberFormatException("Digits, be positive! :)");
         }
 
-        for (int i = ints.length - 2; i >= 0; i = i - 2) {
-           int j = ints[i];
-           j = j * 2;
-           if (j > 9) {
-                 j = j % 10 + 1;
-               }
-                ints[i] = j;
-        }
+//        for (int i = ints.length - 2; i >= 0; i = i - 2) {
+//           int j = ints[i];
+//           j = j * 2;
+//           if (j > 9) {
+//                 j = j % 10 + 1;
+//               }
+//                ints[i] = j;
+//        }
+//        int sum = 0;
+//        for (int i = 0; i < ints.length; i++) {
+//             sum += ints[i];
+//        }
+//        return sum % 10 == 0;
+
         int sum = 0;
-        for (int i = 0; i < ints.length; i++) {
-             sum += ints[i];
+        boolean even = false;
+        for (int i = ints.length - 1; i >= 0; i--) {
+            int digit = ints[i];
+            if (even) {
+                if ((digit *= 2) > 9) digit -= 9;
+            }
+            sum += digit;
+            even = !even;
         }
         return sum % 10 == 0;
+
     }
 
     //for String data
