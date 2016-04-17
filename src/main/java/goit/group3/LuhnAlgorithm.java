@@ -30,7 +30,7 @@ public class LuhnAlgorithm {
         try {
             temp = Integer.parseInt(number);
         } catch (NumberFormatException e) {
-            throw new NumberFormatException("Only numeric symbols .");
+            throw new NumberFormatException("Only numeric symbols should be here.");
         }
 
         int[]digits = Integer.toString(temp).chars().map(c -> c-='0').toArray();
