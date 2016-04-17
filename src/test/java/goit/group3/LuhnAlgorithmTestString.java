@@ -11,7 +11,7 @@ import java.util.Arrays;
 @RunWith(value = Parameterized.class)
 
 public class LuhnAlgorithmTestString {
-    public static final LuhnAlgorithm luhnAlgorithm = new LuhnAlgorithm();
+
     private String number;
     private boolean expectedCheck;
 
