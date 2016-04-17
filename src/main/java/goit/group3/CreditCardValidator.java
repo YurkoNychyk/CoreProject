@@ -8,9 +8,9 @@ public class CreditCardValidator implements Validator<CreditCard> {
         card.setNumber(cardNumber);
 
         if (!isOnlyNumeric(cardNumber))
-           throw new WrongNumberException(cardNumber);
+           throw new WrongNumberException("Only numeric symbols should be here.");
         if (cardNumber.length() <16)
-            throw new WrongNumberException();
+            throw new WrongNumberException("Number should be 16 digits");
 
         return LuhnAlgorithm.luhnAlgorithm(card.getNumber());
     }
