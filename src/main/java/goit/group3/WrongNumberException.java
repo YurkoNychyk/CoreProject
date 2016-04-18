@@ -1,3 +1,4 @@
+/*
 package main.java.goit.group3;
 
 public class WrongNumberException extends IllegalArgumentException {
@@ -21,3 +22,4 @@ public class WrongNumberException extends IllegalArgumentException {
 //        return true;
 //    }
 }
+*/

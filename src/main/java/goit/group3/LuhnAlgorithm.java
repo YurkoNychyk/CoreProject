@@ -9,14 +9,14 @@ public class LuhnAlgorithm {
             throw new NumberFormatException("Digits, be positive! :)");
         }
 
-//        for (int i = ints.length - 2; i >= 0; i = i - 2) {
-//           int j = ints[i];
-//           j = j * 2;
-//           if (j > 9) {
-//                 j = j % 10 + 1;
-//               }
-//                ints[i] = j;
-//        }
+        for (int i = ints.length - 2; i >= 0; i = i - 2) {
+           int j = ints[i];
+           j = j * 2;
+           if (j > 9) {
+                 j = j % 10 + 1;
+               }
+                ints[i] = j;
+        }
 //        int sum = 0;
 //        for (int i = 0; i < ints.length; i++) {
 //             sum += ints[i];
@@ -64,10 +64,10 @@ public class LuhnAlgorithm {
     }
 
     //for int data
-    public static boolean cardNumberIsValid(Long number) throws NumberFormatException {
-        int[]digits = Long.toString(number).chars().map(c -> c-='0').toArray();
-        return cardNumberIsValid(digits);
-    }
+//    public static boolean cardNumberIsValid(Long number) throws NumberFormatException {
+//        int[]digits = Long.toString(number).chars().map(c -> c-='0').toArray();
+//        return cardNumberIsValid(digits);
+//    }
 
     private static boolean isOnlyPositive(int[] ints) {
         for (int i = 0; i < ints.length-1; i++)

@@ -31,7 +31,7 @@ public class LuhnAlgorithmTestArray {
         int[] ints5 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0, 1, 2, 1, 3, 2};
 
         return Arrays.asList(new Object[][]{
-                {ints1, true},
+                {ints1, false},
                 {ints2, true},
                 {ints3, false},
                 {ints4, false},

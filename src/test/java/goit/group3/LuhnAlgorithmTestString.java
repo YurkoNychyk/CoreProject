@@ -24,9 +24,9 @@ public class LuhnAlgorithmTestString {
     public static Iterable<Object[]> data(){
         return Arrays.asList(new Object[][]{
                 {"1234567891012132", false},
-                {"676280388885503265", true},
-                {"4417123456789113", true},
-                {"400000012", false},
+                {"6762803888855032", false},
+                {"4417123456789113", false},
+                {"400000015612", false},
                 {"4413130856858590", true}
             }
         );
