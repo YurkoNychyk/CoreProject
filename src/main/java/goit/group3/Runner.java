@@ -6,14 +6,20 @@ public class Runner {
         String test = "1234568789545565";
         int [] test2 = {-1,2,3,5,4};
         long test3 = 1234568789545565L;
-        boolean check;
-        try {
-            check = LuhnAlgorithm.validateNumber(Console.readData("Введіть, будь ласка номер карти",16));
-            if (check) {
-                System.out.println("true");
-            } else System.out.println("false");
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
+        boolean result;
+
+        boolean repeat = true;
+
+        while (repeat) {
+            try {
+                result = LuhnAlgorithm.cardNumberIsValid(Console.readData("Введіть, будь ласка номер карти",16));
+                Console.writeResult(result);
+                repeat =!result;
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
         }
+
+
     }
 }

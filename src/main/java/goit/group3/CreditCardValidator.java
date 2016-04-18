@@ -12,7 +12,7 @@ public class CreditCardValidator implements Validator<CreditCard> {
         if (cardNumber.length() <16)
             throw new WrongNumberException("Number should be 16 digits");
 
-        return LuhnAlgorithm.validateNumber(card.getNumber());
+        return LuhnAlgorithm.cardNumberIsValid(card.getNumber());
     }
 
     private boolean isOnlyNumeric(String str) {

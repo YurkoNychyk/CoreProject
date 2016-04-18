@@ -42,7 +42,7 @@ public class LuhnAlgorithmTestArray {
 
     @Test
     public void testValidateNumber() throws Exception {
-        boolean result = LuhnAlgorithm.validateNumber(ints);
+        boolean result = LuhnAlgorithm.cardNumberIsValid(ints);
         Assert.assertEquals(expectedCheck, result);
     }
 }

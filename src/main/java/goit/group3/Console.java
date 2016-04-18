@@ -4,15 +4,22 @@ import java.util.Scanner;
 
 public class Console {
     private static Scanner consoleReader;
+   /**
+    * @param  welcomeString string that will be printed in console before user input
+    * @param  argsNumber size of returned array
+    * @return array of ints, found in user input string
+    */
     public static int[] readData(String welcomeString,int argsNumber) {
+        int[] args = new int[argsNumber];
+        StringBuffer inputstring= new StringBuffer("");
         int digitsLeft=16;
+
+        System.out.println(welcomeString );
+
         while (true) {
             try {
                 consoleReader = new Scanner(System.in);
-                int[] args = new int[argsNumber];
-                System.out.println(welcomeString );
                 char[] inputChars = consoleReader.nextLine().toCharArray();
-                StringBuffer inputstring= new StringBuffer("");
 
                 int argsIndex=0;
                 while (argsIndex<args.length) {
@@ -33,12 +40,13 @@ public class Console {
                         inputChars = consoleReader.nextLine().toCharArray();
                     }
                 }
+
+            } catch (ArrayIndexOutOfBoundsException E) {
+                System.out.println("033[31mНомер надто довгий! Оброблятимуться перші 16 цифр.033[0m");
+            }
+            finally {
                 System.out.println("Введений номер карти:" + inputstring);
-
-
                 return args;
-            } catch (Exception E) {
-                System.out.println("Помилка вводу!" + E.getMessage());
             }
         }
     }
@@ -46,8 +54,12 @@ public class Console {
         return (c >= '0' && c <= '9');
     }
 
-    public static String readStringData(String welcomeMessage) {
-        System.out.println(welcomeMessage);
-        return consoleReader.nextLine();
+    public static void writeResult(boolean result){
+        if (!result) {
+            System.out.println("\033[31;1mНомер карти введений з помилкою! Введіть номер ще раз.\033[0m");
+        }
+        else {
+            System.out.println("\033[32;1mНомер карти введений правильно!\033[0m");
+        }
     }
 }

@@ -3,7 +3,7 @@ package main.java.goit.group3;
 public class LuhnAlgorithm {
 
     // for int[] data
-    public static boolean validateNumber(int[] ints) throws NumberFormatException {
+    public static boolean cardNumberIsValid(int[] ints) throws NumberFormatException {
 
         if (!isOnlyPositive(ints)) {
             throw new NumberFormatException("Digits, be positive! :)");
@@ -38,7 +38,7 @@ public class LuhnAlgorithm {
     }
 
     //for String data
-    public static boolean validateNumber(String number) throws NumberFormatException {
+    public static boolean cardNumberIsValid(String number) throws NumberFormatException {
         long temp;
         try {
             temp = Long.parseLong(number);
@@ -47,7 +47,7 @@ public class LuhnAlgorithm {
         }
 
         int[]digits = Long.toString(temp).chars().map(c -> c-='0').toArray();
-        return validateNumber(digits);
+        return cardNumberIsValid(digits);
 //        String reverse = new StringBuilder().append(number).reverse().toString();
 //        int sum = 0;
 //        for (int i = 0; i < number.length(); i++) {
@@ -64,9 +64,9 @@ public class LuhnAlgorithm {
     }
 
     //for int data
-    public static boolean validateNumber(Long number) throws NumberFormatException {
+    public static boolean cardNumberIsValid(Long number) throws NumberFormatException {
         int[]digits = Long.toString(number).chars().map(c -> c-='0').toArray();
-        return validateNumber(digits);
+        return cardNumberIsValid(digits);
     }
 
     private static boolean isOnlyPositive(int[] ints) {

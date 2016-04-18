@@ -34,7 +34,7 @@ public class LuhnAlgorithmTestString {
     @Test
     public void testValidateNumber() throws Exception {
         System.out.println(number);
-        boolean result =LuhnAlgorithm.validateNumber(number);
+        boolean result =LuhnAlgorithm.cardNumberIsValid(number);
         Assert.assertEquals(expectedCheck, result);
     }
 }
