@@ -12,7 +12,7 @@ public class Runner {
 
         while (repeat) {
             try {
-                result = LuhnAlgorithm.cardNumberIsValid(Console.readData("Введіть, будь ласка номер карти",16));
+                result = LuhnAlgorithm.cardNumberIsValid(Console.readData("Введіть, будь ласка 16 цифр номеру карти",16));
                 Console.writeResult(result);
                 repeat =!result;
             } catch (Exception e) {

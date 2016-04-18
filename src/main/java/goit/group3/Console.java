@@ -36,13 +36,20 @@ public class Console {
                         }
                     }
                     if (argsIndex<args.length) {
-                        System.out.println("Ви вели номер: "+ inputstring+"\nВведіть ще "+ digitsLeft+ " цифр");
+                        String noDigitsMsg;
+                        if (argsIndex == 0) {
+                            noDigitsMsg = "Ви не ввели жодної цифри. Введіть 16 цифр номеру карти.";
+                        }
+                        else {
+                            noDigitsMsg = "Ви вели номер: " + inputstring + "\nВведіть ще "+ digitsLeft+ " цифр";
+                        }
+
                         inputChars = consoleReader.nextLine().toCharArray();
                     }
                 }
 
             } catch (ArrayIndexOutOfBoundsException E) {
-                System.out.println("033[31mНомер надто довгий! Оброблятимуться перші 16 цифр.033[0m");
+                System.out.println("\033[31mНомер надто довгий! Оброблятимуться перші 16 цифр.\033[0m");
             }
             finally {
                 System.out.println("Введений номер карти:" + inputstring);
