@@ -64,10 +64,10 @@ public class LuhnAlgorithm {
     }
 
     //for int data
-//    public static boolean cardNumberIsValid(Long number) throws NumberFormatException {
-//        int[]digits = Long.toString(number).chars().map(c -> c-='0').toArray();
-//        return cardNumberIsValid(digits);
-//    }
+    public static boolean cardNumberIsValid(Long number) throws NumberFormatException {
+        int[]digits = Long.toString(number).chars().map(c -> c-='0').toArray();
+        return cardNumberIsValid(digits);
+    }
 
     private static boolean isOnlyPositive(int[] ints) {
         for (int i = 0; i < ints.length-1; i++)
