@@ -8,7 +8,7 @@ public class Runner {
         long test3 = 1234568789545565L;
         boolean check;
         try {
-            check = LuhnAlgorithm.validateNumber(Console.readStringData("Введіть, будь ласка номер карти"),16);
+            check = LuhnAlgorithm.validateNumber(Console.readData("Введіть, будь ласка номер карти",16));
             if (check) {
                 System.out.println("true");
             } else System.out.println("false");
