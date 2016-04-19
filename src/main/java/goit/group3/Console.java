@@ -43,7 +43,7 @@ public class Console {
                         else {
                             noDigitsMsg = "Ви вели номер: " + inputstring + "\nВведіть ще "+ digitsLeft+ " цифр";
                         }
-
+                        System.out.println(noDigitsMsg);
                         inputChars = consoleReader.nextLine().toCharArray();
                     }
                 }
