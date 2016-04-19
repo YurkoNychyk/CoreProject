@@ -8,13 +8,19 @@ public class Runner {
 //        long test3 = 1234568789545565L;
         boolean result;
 
-        boolean repeat = true;
+        boolean quit = false;
 
-        while (repeat) {
+        while (!quit) {
             try {
-                result = LuhnAlgorithm.cardNumberIsValid(Console.readData("Введіть, будь ласка 16 цифр номеру карти",16));
+                result = LuhnAlgorithm.cardNumberIsValid(Console.readData("Введіть, будь ласка 16 цифр номеру карти для перевірки",16));
                 Console.writeResult(result);
-                repeat =!result;
+                while (true){
+                    if (Console.readString("\n - Щоб перевірити наступний номер натисніть  \"Enter\". \n - Для виходу введіть \"q\" та натисніть \"Enter\" ").equals("q"))
+                        quit = true;
+                        break;
+                }
+
+
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }

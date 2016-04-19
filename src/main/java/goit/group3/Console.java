@@ -49,24 +49,30 @@ public class Console {
                 }
 
             } catch (ArrayIndexOutOfBoundsException E) {
-                System.out.println("\033[31mНомер надто довгий! Оброблятимуться перші 16 цифр.\033[0m");
+                System.out.println("\033[31;1m\nНомер надто довгий! Оброблятимуться перші 16 цифр.\033[0m");
             }
             finally {
-                System.out.println("Введений номер карти:" + inputstring);
+                System.out.println("\nВведений номер карти:" + inputstring);
                 return args;
             }
         }
     }
+
+    public static String readString(String welcomeMessage) {
+        System.out.println(welcomeMessage);
+        return consoleReader.nextLine();
+    }
+
     private static boolean isDigit(char c){
         return (c >= '0' && c <= '9');
     }
 
     public static void writeResult(boolean result){
         if (!result) {
-            System.out.println("\033[31;1mНомер карти введений з помилкою! Введіть номер ще раз.\033[0m");
+            System.out.println("\033[31;1m\nНомер карти невалідний! Введіть номер ще раз.\033[0m");
         }
         else {
-            System.out.println("\033[32;1mНомер карти введений правильно!\033[0m");
+            System.out.println("\033[32;1m\nНомер карти валідний!\033[0m");
         }
     }
 }
