@@ -2,14 +2,12 @@ package main.java.goit.group3;
 
 public class LuhnAlgorithm {
 
-
     public static boolean cardNumberIsValid(int[] ints) throws NumberFormatException {
 
         if (!isOnlyPositive(ints)) {
             throw new NumberFormatException("Digits, be positive! :)");
         }
-
-
+        
         int sum = 0;
         boolean even = false;
         for (int i = ints.length - 1; i >= 0; i--) {
@@ -20,11 +18,9 @@ public class LuhnAlgorithm {
             sum += digit;
             even = !even;
         }
+        
         return sum % 10 == 0;
-
     }
-
-
 
     private static boolean isOnlyPositive(int[] ints) {
         for (int i = 0; i < ints.length-1; i++)
