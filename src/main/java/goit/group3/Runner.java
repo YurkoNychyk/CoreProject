@@ -1,13 +1,10 @@
 package main.java.goit.group3;
 
 public class Runner {
+    
     public static void main(String[] args) {
-
-//        String test = "1234568789545565";
-//        int [] test2 = {-1,2,3,5,4};
-//        long test3 = 1234568789545565L;
+        
         boolean result;
-
         boolean quit = false;
 
         while (!quit) {
@@ -19,8 +16,6 @@ public class Runner {
                         quit = true;
                         break;
                 }
-
-
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
